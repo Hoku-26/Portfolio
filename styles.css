@@ -48,3 +48,25 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* ここからレスポンシブデザイン */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 10px;  /* スマホでヘッダーをコンパクトに */
+    }
+
+    section {
+        width: 90%;  /* 画面幅を有効活用 */
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    ul li {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
