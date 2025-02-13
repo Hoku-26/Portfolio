@@ -12,6 +12,13 @@
         <!-- Firestore のデータがここに表示される -->
     </div>
     
+    <div id="error-message" style="color: red;"></div>
+    <script>
+    window.onerror = function(message, source, lineno, colno, error) {
+        document.getElementById("error-message").innerText = "エラー: " + message;
+    };
+    </script>
+    
     <header>
         <h1>髙谷保久斗</h1>
         <p>エンジニア・開発者</p>
