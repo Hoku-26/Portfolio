@@ -12,13 +12,6 @@
         <!-- Firestore のデータがここに表示される -->
     </div>
     
-    <div id="error-message" style="color: red;"></div>
-    <script>
-    window.onerror = function(message, source, lineno, colno, error) {
-        document.getElementById("error-message").innerText = "エラー: " + message;
-    };
-    </script>
-    
     <header>
         <h1>髙谷保久斗</h1>
         <p>エンジニア・開発者</p>
@@ -79,8 +72,11 @@
         async function loadContent() {
             const docRef = doc(db, "pages", "index"); // "pages" コレクションの "index" ドキュメントを参照
             const docSnap = await getDoc(docRef);
+
+            console.log(docSnap());
             
             if (docSnap.exists()) {
+                //id属性[editable-content]を持つ要素を取得、innerHTMLで要素書き換えられる状態にし、
                 document.getElementById("editable-content").innerHTML = docSnap.data().content;
             } else {
                 console.log("No such document!");
